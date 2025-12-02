@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./assets/img/logotipo-min.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/82efd89933.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <title>Ecommerce Braderhud</title>
+</head>
+
+<body>
+  <nav
+    class="navbar navbar-dark navbar-expand-lg bg-transparent top-0 start-0 w-100 z-3 px-4 rounded-3 justify-content-between">
+    <img class="img-fluid w-25 w-md-25 w-lg-20" src="./assets/img/logoblanco.png" alt="" />
+    <button class="navbar-toggler border border-white" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+      <img class="d-lg-none w-50 p-3" src="./assets/img/logoblanco.png" alt="">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-3">
+        <li class="nav-item">
+          <a class="nav-link active text-white fw-bold" aria-current="page" href="./index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="./productos.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="#">Carrito <i class="fa-solid fa-cart-shopping"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </nav>
+
+
+  <!--Contenido principal-->
+  <main class="container py-5 mt-5">
+    <div class="row g-2">
+      <div class="col-12 col-lg-6">
+        <!-- Carousel de imagenes del producto -->
+        <div id="productCarousel" class="carousel slide rounded-4 overflow-hidden" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="d-flex align-items-center justify-content-center">
+                <img class="img-fluid m-3" src="./assets/img/5.png" alt="Vista frontal">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex align-items-center justify-content-center">
+                <img class="img-fluid m-3" src="./assets/img/6.png" alt="Vista lateral">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex align-items-center justify-content-center">
+                <img class="img-fluid m-3" src="./assets/img/7.png" class="" alt="Vista trasera">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex align-items-center justify-content-center">
+                <img class="img-fluid m-3" src="./assets/img/diseño-final-negra-espalda1.png" class="" alt="Vista trasera">
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="col-12 col-lg-6">
+        <!-- Detalles del producto -->
+        <div class="rounded-4 p-4">
+          <h2 class="titulo-det fw-bold mb-3">Polera Oversize Blanca</h2>
+          <p class="fs-2 fw-bold mb-2 text-white">$ 25.990</p>
+          <p class="text-secondary mb-4">Disponibilidad: <span class="text-success">En stock</span></p>
+
+          <div class="d-flex gap-3 mb-4">
+            <a class="enlaces">
+              <i class="fa-solid fa-cart-shopping me-2"></i>Agregar al carro
+            </a>
+            <a class="enlaces" href="./productos.html">Volver</a>
+          </div>
+
+          <div class="mt-4">
+            <h5 class="fw-bold text-white mb-3 fs-3">Descripción</h5>
+            <p class="text-white fs-5">La esencia de Braderhud en su mejor forma. Una polera oversize de caída amplia, hecha para quienes viven la estética urbana sin pedir permiso. Fabricada con algodón de alto gramaje para mantener estructura, comodidad y presencia en cualquier situación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-5 py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <img class="footer-logo mb-3" src="./assets/img/logoblanco.png" alt="Braderhud Logo" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-title mb-3">Sobre Braderhud</h5>
+          <p class="footer-text">
+            Moda urbana y streetwear de calidad. Diseños únicos que expresan tu estilo.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-title mb-3">Newsletter</h5>
+          <p class="footer-text mb-3">Suscríbete para recibir ofertas exclusivas</p>
+          <form class="newsletter-form">
+            <input type="email" class="form-control mb-2" placeholder="Tu email" required />
+            <button type="submit" class="btn btn-footer w-100">Suscribirse</button>
+          </form>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-title mb-3">Navegación</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./productos.html">Productos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p class="footer-copyright mb-0">&copy; 2025 Braderhud. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>

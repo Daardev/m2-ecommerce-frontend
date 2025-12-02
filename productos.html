@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./assets/img/logotipo-min.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/82efd89933.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <title>Ecommerce Braderhud</title>
+</head>
+
+<body>
+  <nav
+    class="navbar navbar-dark navbar-expand-lg bg-transparent position-absolute top-0 start-0 w-100 px-4 rounded-3 justify-content-between">
+    <img class="img-fluid w-25 w-md-25 w-lg-20" src="./assets/img/logoblanco.png" alt="" />
+    <button class="navbar-toggler border border-white" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+      <img class="d-lg-none p-3 \" src="./assets/img/logoblanco.png" alt="">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-3">
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" aria-current="page" href="./index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white fw-bold" href="./productos.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="#">Carrito <i class="fa-solid fa-cart-plus"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Header-->
+  <header class="d-flex align-items-center justify-content-end px-3 position-relative" id="header">
+      <div class="row justify-content-end">
+        <div class="col-12 col-md-8 col-lg-6 text-end z-3 w-50">
+          <h1 class="fw-bold text-uppercase">Black Friday</h1>
+          <p class="">
+            Nuestras prendas oversize están diseñadas para quienes buscan comodidad sin perder estilo. Colores intensos, calidad superior y un look que destaca en cualquier lugar
+          </p>
+          <a class="enlaces" href="#">Ver más</a>
+        </div>
+      </div>
+  </header>
+
+  <!--Contenido principal-->
+  <main class="container pt-5">
+    <div class="row mb-4">
+      <div class="col-12">
+        <h2 class="text-center text-uppercase fw-bold pt-4 mb-4">Todos los productos</h2>
+        <div class="d-flex gap-2">
+          <button class="enlaces">
+            Ordenar por: <span class="fw-bold">Precio ↑</span>
+          </button>
+          <button class="enlaces">
+            Nombre A-Z
+          </button>
+        </div>
+      </div>
+    </div>
+    <section class="row g-4">
+      <!--Producto 1-->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow productos">
+          <a href="./producto1.html"><img src="./assets/img/6.png" class="card-img-top" alt="Polera Oversize Negra"></a>
+          <div class="card-body bg-light">
+            <h5 class="card-title text-dark fw-bold">Polera Oversize Negra</h5>
+            <p class="card-text text-secondary">Estilo urbano esencial con caída perfecta para ti.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="precio">$25.990</span>
+              <a class="enlaces" href="#">Agregar <i class="fa-solid fa-cart-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Producto 2-->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow productos">
+          <a href="./producto1.html"><img src="./assets/img/5.png" class="card-img-top" alt="Polera Oversize Blanca"></a>
+          <div class="card-body bg-light">
+            <h5 class="card-title text-dark fw-bold">Polera Oversize Blanca</h5>
+            <p class="card-text text-secondary">Estilo urbano esencial con caída perfecta para ti.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="precio">$25.990</span>
+              <a class="enlaces" href="#">Agregar <i class="fa-solid fa-cart-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Producto 3-->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow productos">
+          <a href="./producto1.html"><img src="./assets/img/diseño-frente-azul.png" class="card-img-top" alt="Polera Oversize Azul"></a>
+          <div class="card-body bg-light">
+            <h5 class="card-title text-dark fw-bold">Polera Oversize Azul</h5>
+            <p class="card-text text-secondary">Estilo urbano esencial con caída perfecta para ti.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="precio">$25.990</span>
+              <a class="enlaces" href="#">Agregar <i class="fa-solid fa-cart-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Producto 4-->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow productos">
+          <a href="./producto1.html"><img src="./assets/img/diseño-final.png" class="card-img-top" alt="Polera Oversize Café"></a>
+          <div class="card-body bg-light">
+            <h5 class="card-title text-dark fw-bold">Polera Oversize Café</h5>
+            <p class="card-text text-secondary">Estilo urbano esencial con caída perfecta para ti.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="precio">$25.990</span>
+              <a class="enlaces" href="#">Agregar <i class="fa-solid fa-cart-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Producto 5-->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow productos">
+          <a href="./producto1.html"><img src="./assets/img/Diseñ03.png" class="card-img-top" alt="Polera Oversize Vino"></a>
+          <div class="card-body bg-light">
+            <h5 class="card-title text-dark fw-bold">Polera Oversize Vino</h5>
+            <p class="card-text text-secondary">Estilo urbano esencial con caída perfecta para ti.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="precio">$25.990</span>
+              <a class="enlaces" href="#"">Agregar <i class="fa-solid fa-cart-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Producto 6-->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow productos">
+          <a href="./producto1.html"><img src="./assets/img/diseño-final-negra-espalda1.png" class="card-img-top" alt="Polera Oversize Coral"></a>
+          <div class="card-body bg-light">
+            <h5 class="card-title text-dark fw-bold">Polera Oversize Coral</h5>
+            <p class="card-text text-secondary">Estilo urbano esencial con caída perfecta para ti.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="precio">$25.990</span>
+              <a class="enlaces" href="#">Agregar <i class="fa-solid fa-cart-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-5 py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <img class="footer-logo mb-3" src="./assets/img/logoblanco.png" alt="Braderhud Logo" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-title mb-3">Sobre Braderhud</h5>
+          <p class="footer-text">
+            Moda urbana y streetwear de calidad. Diseños únicos que expresan tu estilo.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-title mb-3">Newsletter</h5>
+          <p class="footer-text mb-3">Suscríbete para recibir ofertas exclusivas</p>
+          <form class="newsletter-form">
+            <input type="email" class="form-control mb-2" placeholder="Tu email" required />
+            <button type="submit" class="btn btn-footer w-100">Suscribirse</button>
+          </form>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-title mb-3">Navegación</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./productos.html">Productos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p class="footer-copyright mb-0">&copy; 2025 Braderhud. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
