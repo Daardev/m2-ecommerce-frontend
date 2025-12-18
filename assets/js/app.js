@@ -38,56 +38,82 @@ let descuentoAplicado = false;
 const PASSWORD_MAESTRA = "1234";
 let usuarioLogueado = false;
 
-// Cargar carrito desde localStorage al iniciar
 function cargarCarrito() {
   const carritoGuardado = localStorage.getItem('carrito');
   const descuentoGuardado = localStorage.getItem('descuentoAplicado');
-  
+
   if (carritoGuardado) {
     carrito = JSON.parse(carritoGuardado);
   }
-  
+
   if (descuentoGuardado) {
     descuentoAplicado = JSON.parse(descuentoGuardado);
   }
-  
+
   contadorCarrito();
   renderizarCarrito();
 }
 
-// Guardar carrito en localStorage
 function guardarCarrito() {
   localStorage.setItem('carrito', JSON.stringify(carrito));
   localStorage.setItem('descuentoAplicado', JSON.stringify(descuentoAplicado));
 }
 
-// Cargar el carrito al iniciar
 cargarCarrito();
 
 console.log(catalogo[0].nombre)
 
-// Funcion renderizar el catalogo
+const esPageProductos = window.location.pathname.includes('productos.html');
+
 function renderizarCatalogo() {
   let divCatalogo = document.getElementById("catalogo");
+  if (!divCatalogo) return;
+
   let productos = '';
-  catalogo.forEach((prod) => {
-    productos += `
-    <div class="item d-flex flex-column productos-index">
-            <a href="./producto1.html">
-              <img src="${prod.img}" alt="">
-            </a>
-            <div class="card-content d-flex flex-column">
-              <h3>${prod.nombre}</h3>
-              <p>${prod.descripcion}</p>
-              <div class="d-flex justify-content-between">
-                <span class="precio">${formatearPrecio(prod.precio)}</span>
-                <a class="enlaces" href="#" onclick="agregarProductos(${prod.id})">Agregar <i class="fa-solid fa-cart-plus"></i>
-                </a>
-              </div>
+
+  if (esPageProductos) {
+    // Renderizado para productos
+    catalogo.forEach((prod) => {
+      productos += `
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 rounded-4 overflow-hidden shadow productos-index">
+          <a href="./producto1.html">
+            <img src="${prod.img}" class="card-img-top" alt="${prod.nombre}">
+          </a>
+          <div class="card-body bg-light">
+            <h5 class="card-title text-dark fw-bold">${prod.nombre}</h5>
+            <p class="card-text text-secondary">${prod.descripcion}</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="precio">${formatearPrecio(prod.precio)}</span>
+              <button class="enlaces" onclick="agregarProductos(${prod.id})">Agregar <i class="fa-solid fa-cart-plus"></i></button>
             </div>
           </div>
-    `
-  });
+        </div>
+      </div>
+      `;
+    });
+  } else {
+    // Renderizado para index
+    catalogo.forEach((prod) => {
+      productos += `
+      <div class="item d-flex flex-column productos-index">
+        <a href="./producto1.html">
+          <img src="${prod.img}" alt="${prod.nombre}">
+        </a>
+        <div class="card-content d-flex flex-column">
+          <h3>${prod.nombre}</h3>
+          <p>${prod.descripcion}</p>
+          <div class="d-flex justify-content-between">
+            <span class="precio">${formatearPrecio(prod.precio)}</span>
+            <button class="enlaces" onclick="agregarProductos(${prod.id})">Agregar <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      `;
+    });
+  }
+
   divCatalogo.innerHTML = productos;
 }
 renderizarCatalogo()
@@ -101,7 +127,6 @@ function agregarProductos(id) {
   contadorCarrito();
   renderizarCarrito();
 
-  // Abrir modal de confirmación
   const modal = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
   modal.show();
 }
@@ -123,13 +148,11 @@ function abrirCarrito() {
 }
 
 function irAlCarrito() {
-  // Cerrar el modal de confirmación primero
   const modalConfirmacion = bootstrap.Modal.getInstance(document.getElementById('modalConfirmacion'));
   if (modalConfirmacion) {
     modalConfirmacion.hide();
   }
 
-  // Esperar a que se cierre antes de abrir el carrito
   setTimeout(() => {
     abrirCarrito();
   }, 300);
@@ -140,12 +163,10 @@ function contadorCarrito() {
   const carritoIcon = document.querySelector('.fa-cart-shopping');
   contador.textContent = carrito.length;
 
-  // Agregar animación al ícono del carrito
   if (carrito.length > 0) {
     carritoIcon.classList.add('cart-animate');
     contador.classList.add('pulse');
 
-    // Remover la clase después de la animación
     setTimeout(() => {
       carritoIcon.classList.remove('cart-animate');
       contador.classList.remove('pulse');
@@ -159,10 +180,9 @@ function renderizarCarrito() {
 
   contenedor.innerHTML = '';
 
-  //  Carrito vacío
   if (carrito.length === 0) {
     contenedor.innerHTML = `
-      <p class="text-center text-muted">
+      <p class="text-center text-white">
         Tu carrito está vacío
       </p>
     `;
@@ -170,7 +190,6 @@ function renderizarCarrito() {
     return;
   }
 
-  //  Carrito con productos
   carrito.forEach((prod) => {
     contenedor.innerHTML += `
       <div class="d-flex justify-content-between align-items-center mb-2 border-bottom pb-2">
@@ -187,7 +206,6 @@ function renderizarCarrito() {
     `;
   });
 
-  // Actualizar total
   totalSpan.textContent = formatearPrecio(calcularTotal());
 }
 
@@ -198,7 +216,6 @@ function calcularTotal() {
     total += prod.precio;
   });
 
-  // aplicar descuento del 15% si corresponde
   if (descuentoAplicado === true) {
     total = total * 0.85;
   }
@@ -211,12 +228,11 @@ function aplicarDescuento() {
   const codigo = input.value.trim().toUpperCase();
 
   if (codigo === 'DESC15') {
-    guardarCarrito();
     descuentoAplicado = true;
+    guardarCarrito();
     renderizarCarrito();
     alert('Descuento del 15% aplicado');
   } else {
-    descuentoAplicado = false;
     alert('Código de descuento inválido');
   }
 
@@ -229,4 +245,140 @@ function formatearPrecio(valor) {
     currency: 'CLP',
     minimumFractionDigits: 0
   });
+}
+
+function mostrarModal(tipo) {
+  const modalAuth = new bootstrap.Modal(document.getElementById('modalAuth'));
+  modalAuth.show();
+
+  if (tipo === 'login') {
+    mostrarFormulario('login');
+  } else if (tipo === 'registro') {
+    mostrarFormulario('registro');
+  }
+}
+
+function mostrarFormulario(tipo) {
+  const formLogin = document.getElementById('form-login-container');
+  const formRegistro = document.getElementById('form-registro-container');
+  const btnLogin = document.getElementById('btn-mostrar-login');
+  const btnRegistro = document.getElementById('btn-mostrar-registro');
+
+  if (tipo === 'login') {
+    formLogin.style.display = 'block';
+    formRegistro.style.display = 'none';
+    btnLogin.classList.add('active');
+    btnLogin.classList.remove('btn-outline-primary');
+    btnLogin.classList.add('btn-primary');
+    btnRegistro.classList.remove('active', 'btn-primary');
+    btnRegistro.classList.add('btn-outline-primary');
+  } else if (tipo === 'registro') {
+    formLogin.style.display = 'none';
+    formRegistro.style.display = 'block';
+    btnRegistro.classList.add('active');
+    btnRegistro.classList.remove('btn-outline-primary');
+    btnRegistro.classList.add('btn-primary');
+    btnLogin.classList.remove('active', 'btn-primary');
+    btnLogin.classList.add('btn-outline-primary');
+  }
+}
+
+// Iniciar sesión
+function iniciarSesion(usuario, password) {
+  if (password === PASSWORD_MAESTRA) {
+    usuarioLogueado = true;
+    console.log("Usuario logueado:", usuario);
+
+    const modalAuth = bootstrap.Modal.getInstance(document.getElementById('modalAuth'));
+    if (modalAuth) modalAuth.hide();
+
+    actualizarEstadoLogin(usuario);
+    alert(`¡Bienvenido ${usuario}!`);
+
+  } else {
+    console.warn("Credenciales inválidas");
+    alert("Contraseña incorrecta");
+  }
+}
+
+function manejarSubmitLogin(event) {
+  event.preventDefault();
+
+  const usuario = document.getElementById('login-usuario').value.trim();
+  const password = document.getElementById('login-password').value;
+
+  if (!usuario || !password) {
+    alert('Por favor completa todos los campos');
+    return;
+  }
+
+  iniciarSesion(usuario, password);
+
+  if (usuarioLogueado) {
+    document.getElementById('form-login').reset();
+  }
+}
+
+// Registrar nuevo usuario
+function registrarUsuario(event) {
+  event.preventDefault();
+  
+  const usuario = document.getElementById('registro-usuario').value.trim();
+  const password = document.getElementById('registro-password').value;
+  const confirmPassword = document.getElementById('registro-confirm-password').value;
+  
+  if (!usuario || !password || !confirmPassword) {
+    alert('Por favor completa todos los campos');
+    return;
+  }
+  
+  if (password !== confirmPassword) {
+    alert('Las contraseñas no coinciden');
+    return;
+  }
+  
+  if (password.length < 4) {
+    alert('La contraseña debe tener al menos 4 caracteres');
+    return;
+  }
+  
+  // Simular registro exitoso
+  console.log(`Usuario "${usuario}" registrado`);
+  alert(`¡Cuenta creada! Ahora puedes iniciar sesión`);
+  
+  // Cambiar al formulario de login
+  document.getElementById('form-registro').reset();
+  mostrarFormulario('login');
+}
+
+// Cerrar sesión
+function cerrarSesion() {
+  usuarioLogueado = false;
+  console.log('Sesión cerrada');
+  actualizarEstadoLogin();
+  alert('Sesión cerrada correctamente');
+}
+
+// Actualizar interfaz según estado de login
+function actualizarEstadoLogin(nombreUsuario = '') {
+  const btnLogin = document.getElementById('btn-login');
+  const btnPerfil = document.getElementById('btn-perfil');
+
+  if (usuarioLogueado) {
+    if (btnLogin) btnLogin.style.display = 'none';
+    if (btnPerfil) {
+      btnPerfil.style.display = 'block';
+      btnPerfil.innerHTML = `
+        <button class="btn btn-link nav-link text-white dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa-solid fa-user"></i> ${nombreUsuario || 'Usuario'}
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#" onclick="cerrarSesion()"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+        </ul>
+      `;
+    }
+  } else {
+    if (btnLogin) btnLogin.style.display = 'block';
+    if (btnPerfil) btnPerfil.style.display = 'none';
+  }
 }

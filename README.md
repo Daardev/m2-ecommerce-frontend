@@ -9,9 +9,14 @@ Sitio web de ecommerce para la marca Braderhud, especializada en poleras oversiz
 ## Características
 
 - Diseño responsive (mobile, tablet y desktop)
-- Catálogo de productos con tarjetas
+- Catálogo de productos con tarjetas interactivas
 - Vista detallada de producto con galería de imágenes
-- Navegación entre páginas
+- Carrito de compras funcional con contador dinámico
+- Persistencia de datos con LocalStorage
+- Sistema de descuentos (código: DESC15)
+- Modales de confirmación al agregar productos
+- Cálculo automático de totales
+- Animaciones en el carrito
 - Footer con newsletter y enlaces
 - Estilos modernos con Bootstrap 5
 

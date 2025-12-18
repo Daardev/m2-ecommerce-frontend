@@ -49,16 +49,7 @@ nav,
   background: transparent !important;
   padding: 0 !important;
   z-index: 1;
-}
-
-/* Media query para tablet y desktop */
-@media (min-width: 768px) {
-  nav,
-  .navbar,
-  .navbar-dark,
-  .navbar-expand-lg {
-    margin: 0 !important;
-  }
+  padding: 10px !important;
 }
 
 .enlaces {
@@ -101,11 +92,39 @@ nav,
   color: var(--color--2) !important;
 }
 
+/* Botón de Login */
+#btn-login .btn {
+  background-color: var(--background-terciario);
+  border-color: var(--background-terciario);
+  color: white;
+}
+
+#btn-login .btn:hover {
+  background-color: var(--color--3);
+  border-color: var(--color--3);
+  transition: 0.3s ease;
+}
+
+/* Dropdown del perfil de usuario */
+#btn-perfil .dropdown-menu {
+  background-color: var(--background-terciario);
+  border: 1px solid var(--color--3);
+}
+
+#btn-perfil .dropdown-item {
+  color: white;
+}
+
+#btn-perfil .dropdown-item:hover {
+  background-color: var(--color--3);
+  color: var(--color--1);
+}
+
 /* ===== HEADER ===== */
 header {
   position: relative;
   top: 0;
-  margin-top: -80px;
+  margin-top: -100px !important;
   min-height: 800px;
   background-image: url(../img/diseñoheader.jpg);
   background-size: cover;
@@ -399,10 +418,165 @@ footer {
     margin-right: 0 !important;
   }
 
-  .imagen-offcanvas {
-    display: none;
-  }
   .contenedor-card-index {
     justify-content: center;
   }
+}
+
+/* ===== MODALES ===== */
+.modal-content {
+  background-color: var(--background-terciario);
+  color: white;
+  border: 2px solid var(--color--2);
+  box-shadow: 0 0 20px var(--color--2);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--color--3);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--color--3);
+}
+
+.modal-body .form-label {
+  color: var(--color--1);
+  font-weight: 500;
+}
+
+.modal-body .form-control {
+  background-color: var(--background-body);
+  border: 1px solid var(--color--3);
+  color: white;
+}
+
+.modal-body .form-control:focus {
+  background-color: var(--background-body);
+  border-color: var(--color--2);
+  color: white;
+  box-shadow: 0 0 10px var(--color--2);
+}
+
+.modal-body .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-body a {
+  color: var(--color--2);
+}
+
+.modal-body a:hover {
+  color: var(--color--1);
+}
+
+.modal-title {
+  color: var(--color--1);
+  font-weight: bold;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+/* Botones dentro de modales */
+.modal-body .btn-primary,
+.modal-footer .btn-primary {
+  background-color: var(--color--1);
+  border-color: var(--color--1);
+  color: var(--background-body);
+  font-weight: 600;
+}
+
+.modal-body .btn-primary:hover,
+.modal-footer .btn-primary:hover {
+  background-color: var(--color--1);
+  border-color: var(--color--1);
+  color: var(--background-body);
+  opacity: 0.8;
+}
+
+.modal-footer .btn-secondary {
+  background-color: var(--background-principal);
+  border-color: var(--background-principal);
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: var(--color--3);
+  border-color: var(--color--3);
+}
+
+.modal-footer .btn-success,
+.modal-body .btn-success {
+  background-color: var(--color--2);
+  border-color: var(--color--2);
+  color: white;
+  font-weight: 600;
+}
+
+.modal-footer .btn-success:hover,
+.modal-body .btn-success:hover {
+  background-color: var(--color--2);
+  border-color: var(--color--2);
+  color: white;
+  opacity: 0.8;
+}
+
+/* Botones de selección en modal auth */
+.modal-body .btn-outline-primary {
+  border-color: var(--color--3);
+  color: var(--color--1);
+}
+
+.modal-body .btn-outline-primary:hover {
+  background-color: var(--color--3);
+  border-color: var(--color--3);
+  color: white;
+}
+
+.modal-body .btn-outline-primary.active {
+  background-color: var(--color--3);
+  border-color: var(--color--3);
+  color: white;
+}
+
+/* Estilos específicos del modal del carrito */
+#carrito-body .border-bottom {
+  border-color: var(--color--3) !important;
+}
+
+#carrito-body strong {
+  color: var(--color--1);
+}
+
+#carrito-body small {
+  color: var(--color--2);
+}
+
+#carrito-body .btn-danger {
+  background-color: var(--color--2);
+  border-color: var(--color--2);
+  color: white;
+  font-weight: 500;
+}
+
+#carrito-body .btn-danger:hover {
+  background-color: var(--color--3);
+  border-color: var(--color--3);
+  color: white;
+}
+
+.modal-footer .text-success {
+  color: var(--color--1) !important;
+}
+
+.modal-footer .btn-outline-secondary {
+  border-color: var(--color--3);
+  color: var(--color--1);
+  background-color: transparent;
+}
+
+.modal-footer .btn-outline-secondary:hover {
+  background-color: var(--color--3);
+  border-color: var(--color--3);
+  color: white;
 }
