@@ -19,24 +19,34 @@
 </head>
 
 <body>
-  <nav
-    class="navbar navbar-dark navbar-expand-lg bg-transparent position-absolute top-0 start-0 w-100 px-4 rounded-3 justify-content-between">
+  <nav class="navbar navbar-dark navbar-expand-lg top-0 start-0 w-100 px-4 rounded-3 justify-content-between">
     <img class="img-fluid w-25 w-md-25 w-lg-20" src="./assets/img/logoblanco.png" alt="" />
     <button class="navbar-toggler border border-white" type="button" data-bs-toggle="offcanvas"
       data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
-      <img class="d-lg-none w-50 p-3 " src="./assets/img/logoblanco.png" alt="">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+      aria-labelledby="navbarOffcanvasLgLabel">
+      <img class="d-lg-none w-50 p-3" src="./assets/img/logoblanco.png" alt="">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-3">
         <li class="nav-item">
-          <a class="nav-link active text-white fw-bold" aria-current="page" href="./index.html">Inicio</a>
+          <a class="nav-link active text-white fw-bold" aria-current="page" href="./index.html">
+            Inicio
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-bold" href="./productos.html">Productos</a>
+          <a class="nav-link text-white fw-bold" href="./productos.html">
+            Productos
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-bold" href="#">Carrito <i class="fa-solid fa-cart-shopping"></i></a>
+          <button class="btn btn-link nav-link text-white position-relative" data-bs-toggle="modal"
+            data-bs-target="#modalCarrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="contador" class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+              0
+            </span>
+          </button>
         </li>
       </ul>
     </div>
@@ -44,17 +54,18 @@
 
   <!--Header-->
   <header class="d-flex align-items-center justify-content-end px-3 position-relative">
-      <div class="row justify-content-end">
-        <div class="col-12 col-md-8 col-lg-6 text-end z-3 w-50">
-          <h1 class="fw-bold text-uppercase">Black Friday</h1>
-          <p>
-            Nuestras prendas oversize están diseñadas para quienes buscan comodidad sin perder estilo. Colores intensos, calidad superior y un look que destaca en cualquier lugar
-          </p>
-          <a class="enlaces" href="./productos.html">Ir a Productos</a>
-        </div>
+    <div class="row justify-content-end z-1">
+      <div class="col-12 col-md-8 col-lg-6 text-end w-50">
+        <h1 class="fw-bold text-uppercase">Black Friday</h1>
+        <p>
+          Nuestras prendas oversize están diseñadas para quienes buscan comodidad sin perder estilo. Colores intensos,
+          calidad superior y un look que destaca en cualquier lugar
+        </p>
+        <a class="enlaces" href="./productos.html">Ir a Productos</a>
       </div>
     </div>
   </header>
+
   <!--Contenido principal-->
   <main>
     <section class="col-12 py-4 ps-4">
@@ -64,83 +75,20 @@
         </div>
       </div>
       <div class="carusel row d-flex">
-        <div class="contenedor-card-index d-flex gap-3 m-3">
-          <!--card producto 1-->
-          <div class="item d-flex flex-column productos-index">
-            <a href="./producto1.html">
-              <img src="./assets/img/6.png" alt="">
-            </a>
-            <div class="card-content d-flex flex-column">
-              <h3>Polera Oversize Negra</h3>
-              <p>Estilo urbano esencial con caída perfecta para ti.</p>
-              <div class="d-flex justify-content-between">
-                <span class="precio">$25.990</span>
-                <a class="enlaces" href="#">Agregar <i class="fa-solid fa-cart-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!--card producto 2-->
-          <div class="item d-flex flex-column productos-index">
-            <a href="./producto1.html">
-              <img src="./assets/img/5.png" alt="">
-            </a>
-            <div class="card-content d-flex flex-column">
-              <h3>Polera Oversize Blanca</h3>
-              <p>Versátil, minimalista y ideal para cualquier outfit.</p>
-              <div class="d-flex justify-content-between">
-                <span class="precio">$25.990</span>
-                <a class="enlaces" href="#">Agregar <i class="fa-solid fa-cart-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!--card producto 3-->
-          <div class="item d-flex flex-column productos-index">
-            <a href="./producto1.html">
-              <img src="./assets/img/diseño-frente-azul.png" alt="">
-            </a>
-            <div class="card-content d-flex flex-column">
-              <h3>Polera Oversize Azul</h3>
-              <p>Tono profundo con look relajado,moderno y streetwear.</p>
-              <div class="d-flex justify-content-between">
-                <span class="precio">$25.990</span>
-                <a class="enlaces" href="#">Agregar <i class="fa-solid fa-cart-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!--card producto 4-->
-          <div class="item d-flex flex-column productos-index">
-            <a href="./producto1.html">
-              <img src="./assets/img/diseño-finalFRENTE.png" alt="">
-            </a>
-            <div class="card-content d-flex flex-column">
-              <h3>Polera Oversize Café</h3>
-              <p>Color cálido con estética streetwear y costuras reforzadas</p>
-              <div class="d-flex justify-content-between">
-                <span class="precio">$25.990</span>
-                <a class="enlaces" href="#">Agregar <i class="fa-solid fa-cart-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        <div id="catalogo" class="contenedor-card-index d-flex gap-3 m-3"></div>
       </div>
     </section>
 
     <!-- Call to action -->
-
     <div class="div-padre-call mt-5 d-flex align-items-end position-relative">
-      <div class="col-12 d-flex flex-column align-items-center p-4 z-1">
+      <div class="col-12 d-flex flex-column align-items-center p-4">
         <h3 class="text-center fs-4 text-white text-uppercase">Descubre la nueva colección Braderhud</h3>
-        <p class="text-center px-5 text-white">Prendas oversize con estilo urbano, diseñadas para destacar sin esfuerzo.</p>
+        <p class="text-center px-5 text-white">Prendas oversize con estilo urbano, diseñadas para destacar sin esfuerzo.
+        </p>
         <a class="boton-call" href="./productos.html">Conoce más detalles</a>
       </div>
     </div>
 
-  </main>
 
   <!-- FOOTER -->
   <footer class="mt-5 py-5">
@@ -188,6 +136,57 @@
     </div>
   </footer>
 
+  <!-- Modal de confirmación al agregar producto -->
+  <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Producto agregado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <i class="fa-solid fa-circle-check text-success fs-1 mb-3"></i>
+          <p class="mb-0">El producto se agregó correctamente al carrito</p>
+        </div>
+        <div class="modal-footer justify-content-center gap-3">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+          <button type="button" class="btn btn-primary" onclick="irAlCarrito()">Ir al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalCarrito" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-end modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Tu carrito</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+      </div>
+
+      <div class="modal-body">
+        <div id="carrito-body">
+          <!-- productos renderizados con JS -->
+        </div>
+        
+        <div class="mt-3 p-3 border rounded">
+          <label for="codigo-descuento" class="form-label">Código de descuento</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="codigo-descuento" placeholder="Ingresa tu código">
+            <button class="btn btn-outline-secondary" type="button" onclick="aplicarDescuento()">Aplicar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer justify-content-between">
+        <strong>Total: $<span id="total">0</span></strong>
+        <button class="btn btn-dark">Finalizar compra</button>
+      </div>
+
+    </div>
+  </div>
+</div>
   <script src="./assets/js/app.js"></script>
 </body>
 
